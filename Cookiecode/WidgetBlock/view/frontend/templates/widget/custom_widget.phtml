@@ -1,0 +1,22 @@
+<style>
+    .cc-custom-widget {
+        background: #ff0;
+        padding: 30px;
+        border-radius: 5px;
+        width: <?php echo $this->getData('cc_width') ?>;
+        align: <?php echo $this->getData('cc_aligment') ?>;
+    }
+</style>
+<div class="cc-custom-widget">
+    <h1><?php echo $this->getData('cc_title'); ?></h1>
+    <?php if ($cc_content = $this->getData('cc_content')): ?>
+        <p><?php echo $cc_content; ?></p>
+    <?php endif; ?>
+
+    <?php if ($this->getData('cc_enable_url')): ?>
+        <?php $cc_url = $this->getData('cc_url') ?>
+        <?php if (filter_var($cc_url, FILTER_VALIDATE_URL)): ?>
+            <a href="<?php echo $this->getData('cc_url'); ?>"><?php echo $this->getData('cc_url_label'); ?></a>
+        <?php endif; ?>
+    <?php endif; ?>
+</div>

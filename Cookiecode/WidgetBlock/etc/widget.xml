@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<widgets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Widget:etc/widget.xsd">
+    <widget id="cc_custom_widget" class="Cookiecode\WidgetBlock\Block\Widget\CustomWidget" placeholder_image="Cookiecode_WidgetBlock::images/widget_block.png">
+        <label translate="true">Cookiecode - Custom block widget</label>
+        <description>Cookiecode - Demo Block widget</description>
+        <parameters>
+            <parameter name="cc_title" xsi:type="text" visible="true" required="true" sort_order="0" >
+                <label translate="true">Title</label>
+            </parameter>
+            <parameter name="cc_content" xsi:type="textarea" visible="true" sort_order="10">
+                <label translate="true">Widget content</label>
+            </parameter>
+            <parameter name="cc_enable_url" xsi:type="select" visible="true" source_model="Magento\Config\Model\Config\Source\Yesno" sort_order="20">
+                <label translate="true">Add URL like</label>
+                <description>Enable or disable link</description>
+            </parameter>
+            <parameter name="cc_url" xsi:type="text" visible="true" sort_order="30">
+                <label translate="true">URL</label>
+                <depends>
+                    <parameter name="cc_enable_url" value="1" />
+                </depends>
+            </parameter>
+            <parameter name="cc_url_label" xsi:type="text" visible="true" sort_order="40">
+                <label translate="true">URL Label</label>
+                <depends>
+                    <parameter name="cc_enable_url" value="1" />
+                </depends>
+            </parameter>
+            <parameter name="cc_width" xsi:type="select" source_model="Cookiecode\WidgetBlock\Model\Config\Source\WidgetWidth" visible="true" sort_order="50" >
+                <label translate="true">Widget width</label>
+            </parameter>
+            <parameter name="cc_aligment" xsi:type="select" visible="true" sort_order="70" >
+                <label translate="true">Widget aligment</label>
+                <options>
+                    <option name="left" value="left" selected="true">
+                        <label translate="true">Left</label>
+                    </option>
+                    <option name="right" value="right">
+                        <label translate="true">Right</label>
+                    </option>
+                </options>
+            </parameter>
+        </parameters>
+    </widget>
+</widgets>

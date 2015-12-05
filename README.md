@@ -1,2 +1,5 @@
 # Cookiecode_WidgetBlock
-Simple module - example how we can create Magento 2 widget.
+This is demo module for article "How to create Magento 2 widget" please check it on this my blog:
+http://cookie-code.net/magento-2/how-to-create-magento-2-widget/
+
+Enjoy and thanks! 
